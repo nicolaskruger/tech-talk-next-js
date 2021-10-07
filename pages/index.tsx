@@ -18,6 +18,8 @@ const { NEXT_JS_LOGO, VERSEL_LOGO } = IMG;
 
 const { FEATURE } = FRONTEND_ROUTES;
 
+const size = 200;
+
 const Home: NextPage = () => {
   return (
     <Layout>
@@ -29,8 +31,8 @@ const Home: NextPage = () => {
       <PptPrevNext next={FEATURE} />
       <Container>
         <Main>
-          <ImageC wwidth={100} wheigth={100} src={NEXT_JS_LOGO} alt={NEXT_JS_LOGO} />
-          <ImageC wwidth={100} wheigth={100} src={VERSEL_LOGO} alt={VERSEL_LOGO} />
+          <ImageC wwidth={size} wheigth={size} src={NEXT_JS_LOGO} alt={NEXT_JS_LOGO} />
+          <ImageC wwidth={size} wheigth={size} src={VERSEL_LOGO} alt={VERSEL_LOGO} />
         </Main>
       </Container>
     </Layout>

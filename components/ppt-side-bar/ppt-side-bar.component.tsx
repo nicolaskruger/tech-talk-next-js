@@ -22,6 +22,12 @@ const Div = styled.div<DivProps>`
     padding-top: 40px;
 `
 
+const HamburgerWarper = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+`;
+
 const HamburgerStyled = styled(styled(Hamburger) <DivProps>``).attrs<DivProps>((props) => ({
     color: props.open ? props.theme.backgroundLigth : props.theme.backgroundDark,
 
@@ -38,7 +44,7 @@ const Ul = styled.ul`
     gap: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    min-height: calc( 100vh - 55px );
+    height: calc( 100vh - 55px );
 `;
 
 const PptSideBar: FC = () => {
@@ -58,7 +64,9 @@ const PptSideBar: FC = () => {
 
                 </Ul>
             </Div>
-            <HamburgerStyled open={open} color={"white"} toggled={open} toggle={setOpen} />
+            <HamburgerWarper>
+                <HamburgerStyled open={open} color={"white"} toggled={open} toggle={setOpen} />
+            </HamburgerWarper>
         </>
     )
 }

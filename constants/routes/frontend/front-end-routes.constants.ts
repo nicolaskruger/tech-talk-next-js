@@ -1,6 +1,8 @@
 const FRONTEND_ROUTES = {
     HOME: "/",
-    FEATURE: "/feature"
+    FEATURE: "/feature",
+    SLIDE_ABOUT: "/slide-about",
+    KIND_RENDER: "/slide-kind-render"
 };
 
 const serializeRoutes = () => Object.keys(FRONTEND_ROUTES).map(key => FRONTEND_ROUTES[key as "HOME"])
