@@ -17,6 +17,10 @@ const getKindRende = (): KindRenderType[] => (
         {
             simple: "SSG",
             complete: "Static-Site Generation"
+        },
+        {
+            simple: "ISR",
+            complete: "Incremental Static Regenation"
         }
     ]
 )

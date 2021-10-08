@@ -1,0 +1,1 @@
+export * from "./enum-dictionary/enum-dctionary.type";

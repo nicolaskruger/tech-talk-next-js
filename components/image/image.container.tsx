@@ -22,7 +22,7 @@ const Warper = styled.div<WarperProps>`
 
 const ImageC: FC<ImageNewProps> = (props) => {
     return (
-        <Warper width={props.wwidth} heigth={props.wwidth} >
+        <Warper width={props.wwidth} heigth={props.wheigth} >
             <Image layout='fill' objectFit="contain" {...props} />
         </Warper>
     )
