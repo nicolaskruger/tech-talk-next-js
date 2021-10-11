@@ -1,4 +1,5 @@
 import { pokemonApi } from "../../api"
+import { PokeListDto, PokemonDto } from "../../dto";
 import { Pokemon } from "../../types/pokemon/pokemon.type"
 
 const getPokemons = async (): Promise<Pokemon[]> => {
@@ -16,6 +17,25 @@ const getPokemons = async (): Promise<Pokemon[]> => {
     return Promise.all(pokemons);
 
 }
+
+const getPokemonDto = async (): Promise<PokemonDto[]> => {
+    const pokeApi = pokemonApi();
+
+    return (await pokeApi.page({
+        limit: 10,
+        offset: 0
+    })).results;
+}
+
+const getPokemonByName = async (name: string): Promise<Pokemon> => {
+
+    const pokeApi = pokemonApi();
+
+    return await pokeApi.pokemonName(name)
+}
+
 export {
-    getPokemons
+    getPokemons,
+    getPokemonDto,
+    getPokemonByName
 }

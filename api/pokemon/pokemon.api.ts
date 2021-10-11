@@ -1,7 +1,7 @@
 import { BACKEND_ROUTE, BACKEND_URL } from "../../constants";
 import { PokeListDto } from "../../dto";
 import { axiosApi } from "../axios/axios.api"
-import axios, { AxiosResponse } from "axios"
+import axios, { Axios, AxiosResponse } from "axios"
 import { Pokemon } from "../../types/pokemon/pokemon.type";
 
 
@@ -10,7 +10,7 @@ type QueryPokemon = {
     limit: number
 }
 
-const { POKEMON } = BACKEND_ROUTE;
+const { POKEMON, POKEMON_NAME } = BACKEND_ROUTE;
 
 const pokemonApi = () => {
     const instance = axiosApi(BACKEND_URL);
@@ -30,9 +30,16 @@ const pokemonApi = () => {
         return response.data;
     }
 
+    const pokemonName = async (name: string): Promise<Pokemon> => {
+        const response: AxiosResponse<Pokemon> = await instance.get(POKEMON_NAME(name));
+
+        return response.data
+    }
+
     return {
         page,
-        pokemonUrl
+        pokemonUrl,
+        pokemonName
     }
 }
 
